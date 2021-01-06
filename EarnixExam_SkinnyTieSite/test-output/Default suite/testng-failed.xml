@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.part2_B_TieBar">
+      <class name="Tests.prat2_A_RetroTie">
         <methods>
-          <include name="sumOfTieBar"/>
+          <include name="navigateToRetroCategory"/>
+          <include name="configurations"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- Tests.part2_B_TieBar -->
+      </class> <!-- Tests.prat2_A_RetroTie -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

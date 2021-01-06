@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="Tests.prat2_A_RetroTie">
+        <methods>
+          <include name="sumOfRetroTie"/>
+        </methods>
+      </class> <!-- Tests.prat2_A_RetroTie -->
+      <class name="Tests.part2_B_TieBar">
+        <methods>
+          <include name="sumOfTieBar"/>
+        </methods>
+      </class> <!-- Tests.part2_B_TieBar -->
+      <class name="Tests.prat_1_searchTie">
+        <methods>
+          <include name="searchBLACK_POPLIN_SKINNY_TIE"/>
+        </methods>
+      </class> <!-- Tests.prat_1_searchTie -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

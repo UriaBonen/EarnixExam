@@ -14,7 +14,7 @@ import org.testng.Assert;
 
 public class RetroTiePage {
 
-    WebDriver driver;	
+	WebDriver driver;	
 	private	By PATTERNButtonElement = By.xpath("//*[@class='Header__MainNav hidden-pocket hidden-lap']/ul/li[5]");
 	private By retroCategory=By.xpath("//*[@class='Header__MainNav hidden-pocket hidden-lap']/ul/li[5]/div/ul/li[3]");
 	private By verifyRettroPage=By.xpath("//*[@class='ProductItem__Price Price Text--subdued']");
@@ -22,25 +22,18 @@ public class RetroTiePage {
 	public RetroTiePage(WebDriver driver) {
 		this.driver=driver;
 	}
-	
+
 	public void wait(int timeToWaitInSeconds, By expectElement) {
 		WebDriverWait wait = new WebDriverWait(driver,timeToWaitInSeconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(expectElement));
 	}
 
 
-	public void hoverOnPATTERNButton() {
-		wait(20,PATTERNButtonElement);
-		WebElement PATTERNButton=driver.findElement(By.xpath("//*[@class='Header__MainNav hidden-pocket hidden-lap']/ul/li[5]"));
-		String PATTERNButtonName=PATTERNButton.getText();
-		Actions action=new Actions(driver);	
-		Assert.assertEquals(PATTERNButtonName, "PATTERN");
-		action.moveToElement(PATTERNButton).build().perform();
-	}
 
-	public void clickOnRettroCategory() {
+	public RetroTiePage clickOnRettroCategory() {
 		wait(5,retroCategory);
 		driver.findElement(retroCategory).click();
+		return new RetroTiePage(driver);
 	}
 
 	public void summarizePrices() throws InterruptedException {
@@ -62,5 +55,8 @@ public class RetroTiePage {
 		Assert.assertTrue(sumOfPrice>20);
 	}
 
-
+	public boolean isRetroItemPage() {
+		boolean isRetroItemPage=driver.findElement(By.xpath("//*[@class='PageHeader']/div/div/h1")).getText().equals("RETRO SKINNY TIES");
+		return isRetroItemPage;
+	}
 }

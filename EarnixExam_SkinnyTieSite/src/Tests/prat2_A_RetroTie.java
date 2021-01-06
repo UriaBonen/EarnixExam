@@ -1,34 +1,50 @@
 package Tests;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import Pages.RetroTiePage;
+import Pages.skinnyTies_mainPage;
 
 
 public class prat2_A_RetroTie {
+	WebDriver driver;
 
-	@Test
-	public void sumOfRetroTie() throws InterruptedException {
-		//Configuratins:
-		System.setProperty("webdriver.chrome.driver","C:\\eclipse\\Selenium\\chromeDriver\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-
-		//Test case:
-		/*Enter to Skinnyties site and maximize the windows
-		 *Hover on PATTERN button and click on Retro 
-		 *Enter "BLACK POPLIN SKINNY TIE" on the Search Box
-		 *Click on the result displayed (the first one)
-		 *Run of all product on this page and summarize their price
-		 *if the sum bigger than 20 > Test case pass
-		 */
-
+	@BeforeMethod
+	public void configurations() {
+		System.setProperty("webdriver.chrome.driver","C:\\eclipse\\Selenium\\newVersion\\chromedriver.exe");
+		driver=new ChromeDriver();
 		driver.get("https://skinnyties.com/");
 		driver.manage().window().maximize();
-		RetroTiePage retro_tie_page=new RetroTiePage(driver);
-		retro_tie_page.hoverOnPATTERNButton();
-		retro_tie_page.clickOnRettroCategory();
-		retro_tie_page.summarizePrices();	
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+	}
+
+
+	@Test
+	public void navigateToRetroCategory() throws InterruptedException {
+		skinnyTies_mainPage sk=new skinnyTies_mainPage(driver);
+		sk.clickSubCategory("PATTERN", "Retro");
+		RetroTiePage retroTiePage=new RetroTiePage(driver);
+		Assert.assertTrue(retroTiePage.isRetroItemPage());
+	}
+
+	@Test
+	public void 2.5InchFolter() {
+		
+		navigateToRetroCategory();
+		
+	}
+
+
+	@AfterMethod
+	public void closeBrowser(){
 		driver.close();
 	}
 }
