@@ -27,7 +27,7 @@ public class prat2_A_RetroTie {
 	}
 
 
-	@Test
+	//@Test
 	public void navigateToRetroCategory() throws InterruptedException {
 		skinnyTies_mainPage sk=new skinnyTies_mainPage(driver);
 		sk.clickSubCategory("PATTERN", "Retro");
@@ -35,16 +35,17 @@ public class prat2_A_RetroTie {
 		Assert.assertTrue(retroTiePage.isRetroItemPage());
 	}
 
+
 	@Test
-	public void 2.5InchFolter() {
-		
+	public void filterByTwoDotFiveInch() throws InterruptedException {
 		navigateToRetroCategory();
-		
+		RetroTiePage retroTiePage=new RetroTiePage(driver);
+		retroTiePage.filterByNameButton("2");
 	}
 
 
 	@AfterMethod
 	public void closeBrowser(){
-		driver.close();
+		//driver.close();
 	}
 }

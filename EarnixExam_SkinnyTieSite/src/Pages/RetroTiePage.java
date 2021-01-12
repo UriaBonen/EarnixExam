@@ -59,4 +59,24 @@ public class RetroTiePage {
 		boolean isRetroItemPage=driver.findElement(By.xpath("//*[@class='PageHeader']/div/div/h1")).getText().equals("RETRO SKINNY TIES");
 		return isRetroItemPage;
 	}
+
+
+	public RetroTiePage filterByNameButton(String category) {
+		WebElement retroCategories=driver.findElement(By.className("CollectionFilters"));
+		ArrayList<WebElement> retroCategoriesList=(ArrayList<WebElement>) retroCategories.findElements(By.xpath("//*[@class='Linklist__Item ']/button"));
+		System.out.println(retroCategoriesList.size());
+
+		int i=0;
+		while(i<=retroCategoriesList.size()-1) {
+			if(retroCategoriesList.get(i).getText().equals(category)) {
+				retroCategoriesList.get(i).click();
+				break;
+			}
+			
+			i++;
+		}
+		return new RetroTiePage(driver);
+
+	}
+
 }

@@ -20,6 +20,7 @@ public class skinnyTies_mainPage {
 	private By searchBoxFeild = By.name("q");
 	private By ResultSearch = By.xpath("//*[@class='Segment']/div[2]/div/div");
 	private By viewAll = By.xpath("//*[@class='Heading Link Link--secondary u-h7']");
+	private By SearchPageHeader = By.xpath("//*[@class='SectionHeader__Heading Heading u-h1']");
 
 
 	public  skinnyTies_mainPage(WebDriver driver) {
@@ -38,14 +39,13 @@ public class skinnyTies_mainPage {
 	}
 
 	public skinnyTies_mainPage setTieName(String tieName) throws InterruptedException {
-		wait(20,searchBoxFeild);
 		driver.findElement(searchBoxFeild).sendKeys(tieName);
 		return new skinnyTies_mainPage(driver);
 	}
 
 	public SearchPage clickViewAll() throws InterruptedException {
 		driver.findElement(viewAll).click();
-		Thread.sleep(6000);
+        Thread.sleep(3000);
 		return new SearchPage(driver);
 	}
 
@@ -59,7 +59,6 @@ public class skinnyTies_mainPage {
 		wait(20,searchButton);
 		driver.findElement(searchButton).click();
 		driver.findElement(searchBoxFeild).sendKeys(s);
-
 	}
 
 	public TiePage clickOnFirstResult() throws Exception {

@@ -22,7 +22,6 @@ public class SearchTieBox {
 		driver.get("https://skinnyties.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 	}
 
 	@Test
@@ -32,7 +31,7 @@ public class SearchTieBox {
 		sT_mP.clickOnSearchButton()
 		.setTieName(tieName)
 		.clickViewAll();
-		Assert.assertEquals(driver.getCurrentUrl().contains("https://skinnyties.com/search"), true);
+		Assert.assertEquals(driver.getTitle().contains("BLACK* – SkinnyTiesShop"), true);
 	}
 
 	@Test
