@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-06T20:08:14Z" name="Default suite" finished-at="2021-01-06T20:08:28Z" duration-ms="13691">
+  <suite started-at="2021-01-13T14:20:25Z" name="Default suite" finished-at="2021-01-13T14:20:35Z" duration-ms="9304">
     <groups>
     </groups>
-    <test started-at="2021-01-06T20:08:14Z" name="Default test" finished-at="2021-01-06T20:08:28Z" duration-ms="13691">
+    <test started-at="2021-01-13T14:20:25Z" name="Default test" finished-at="2021-01-13T14:20:35Z" duration-ms="9304">
       <class name="Tests.prat2_A_RetroTie">
-        <test-method is-config="true" signature="configurations()[pri:0, instance:Tests.prat2_A_RetroTie@240237d2]" started-at="2021-01-06T20:08:14Z" name="configurations" finished-at="2021-01-06T20:08:24Z" duration-ms="9773" status="PASS">
+        <test-method is-config="true" signature="configurations()[pri:0, instance:Tests.prat2_A_RetroTie@2ed0fbae]" started-at="2021-01-13T14:20:25Z" name="configurations" finished-at="2021-01-13T14:20:33Z" duration-ms="7872" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configurations -->
-        <test-method signature="navigateToRetroCategory()[pri:0, instance:Tests.prat2_A_RetroTie@240237d2]" started-at="2021-01-06T20:08:24Z" name="navigateToRetroCategory" finished-at="2021-01-06T20:08:28Z" duration-ms="3852" status="PASS">
+        <test-method signature="filterByTwoDotFiveInch()[pri:0, instance:Tests.prat2_A_RetroTie@2ed0fbae]" started-at="2021-01-13T14:20:33Z" name="filterByTwoDotFiveInch" finished-at="2021-01-13T14:20:35Z" duration-ms="1376" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToRetroCategory -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Tests.prat2_A_RetroTie@240237d2]" started-at="2021-01-06T20:08:28Z" name="closeBrowser" finished-at="2021-01-06T20:08:28Z" duration-ms="46" status="PASS">
+        </test-method> <!-- filterByTwoDotFiveInch -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Tests.prat2_A_RetroTie@2ed0fbae]" started-at="2021-01-13T14:20:35Z" name="closeBrowser" finished-at="2021-01-13T14:20:35Z" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

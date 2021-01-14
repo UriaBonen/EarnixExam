@@ -18,6 +18,8 @@ public class RetroTiePage {
 	private	By PATTERNButtonElement = By.xpath("//*[@class='Header__MainNav hidden-pocket hidden-lap']/ul/li[5]");
 	private By retroCategory=By.xpath("//*[@class='Header__MainNav hidden-pocket hidden-lap']/ul/li[5]/div/ul/li[3]");
 	private By verifyRettroPage=By.xpath("//*[@class='ProductItem__Price Price Text--subdued']");
+	private By resetButton=By.xpath("//*[@class='Button Button--secondary']");
+	private By retroItem=By.xpath("//*[@class='ProductItem__Wrapper']/a/div");
 
 	public RetroTiePage(WebDriver driver) {
 		this.driver=driver;
@@ -72,11 +74,37 @@ public class RetroTiePage {
 				retroCategoriesList.get(i).click();
 				break;
 			}
-			
+
 			i++;
 		}
 		return new RetroTiePage(driver);
 
+	}
+
+	public boolean resetButtonExist() {
+		if(driver.findElement(resetButton).isDisplayed()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public RetroTiePage clickReset() throws Exception {
+		try {
+			driver.findElement(resetButton).click();
+		}
+		catch(Exception e){
+			throw new Exception("RESET button is not exsit");
+		}
+		return new RetroTiePage(driver);
+	}
+
+	public RetroTiePage validatfilter(String nameButton) {
+		WebElement collectionItems=driver.findElement(By.className("CollectionInner__Products"));
+		ArrayList<WebElement> items=(ArrayList<WebElement>) collectionItems.findElements(retroItem);
+		System.out.println(items.iterator().toString());
+		return new RetroTiePage(driver);
 	}
 
 }

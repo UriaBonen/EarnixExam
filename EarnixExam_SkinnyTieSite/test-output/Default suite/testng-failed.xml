@@ -5,7 +5,7 @@
     <classes>
       <class name="Tests.prat2_A_RetroTie">
         <methods>
-          <include name="navigateToRetroCategory"/>
+          <include name="filterByTwoDotFiveInch"/>
           <include name="configurations"/>
           <include name="closeBrowser"/>
         </methods>

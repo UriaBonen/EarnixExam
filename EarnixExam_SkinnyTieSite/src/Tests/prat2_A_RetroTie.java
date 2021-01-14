@@ -40,12 +40,23 @@ public class prat2_A_RetroTie {
 	public void filterByTwoDotFiveInch() throws InterruptedException {
 		navigateToRetroCategory();
 		RetroTiePage retroTiePage=new RetroTiePage(driver);
-		retroTiePage.filterByNameButton("2");
+		retroTiePage.filterByNameButton("2.5 inches");
+		retroTiePage.validatfilter("bla");
+	}
+
+	///@Test
+	public void isResetButtonExsit() throws Exception{
+		//navigateToRetroCategory();
+		RetroTiePage retroTiePage=new RetroTiePage(driver);
+		filterByTwoDotFiveInch();
+		boolean reset= retroTiePage.resetButtonExist();
+		System.out.println(reset);
+		retroTiePage.clickReset();
 	}
 
 
 	@AfterMethod
 	public void closeBrowser(){
-		//driver.close();
+		driver.close();
 	}
 }

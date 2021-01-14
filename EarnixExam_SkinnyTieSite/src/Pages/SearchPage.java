@@ -22,7 +22,7 @@ public class SearchPage {
 	}
 
 
-	public SearchPage addItems () {
+	public SearchPage addItems() {
 		ArrayList<WebElement> items;
 		items=(ArrayList<WebElement>) driver.findElements(By.className("bla"));
 		System.out.println(items.size());
